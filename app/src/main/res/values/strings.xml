@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CryptoScreen</string>
+    <string name="click_to_see_cryptos">Click to see Cryptos</string>
+</resources>
