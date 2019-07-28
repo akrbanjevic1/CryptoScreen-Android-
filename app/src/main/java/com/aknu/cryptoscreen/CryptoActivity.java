@@ -78,7 +78,8 @@ public class CryptoActivity extends AppCompatActivity {
     private void BitCoinParse() {
         //Here, we define the string "url" to hold the link to the relevant information from the
         //Alpha vantage API
-        String url = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=BTC&to_currency=USD&apikey=45APH96LSR9LHB57";
+        String url = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=" +
+                "BTC&to_currency=USD&apikey=45APH96LSR9LHB57";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {

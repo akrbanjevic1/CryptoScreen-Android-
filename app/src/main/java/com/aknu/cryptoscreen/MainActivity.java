@@ -38,7 +38,13 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);
         //This line starts the next activity upon button click.
         startActivity(intent);
+    }
 
+    public void onClick2(View view) {
+        //Here I am instantiating a new intent that, upon the click of this button, will open
+        //the activity "FireBase_Activity.
+        Intent intent2 = new Intent(this, FireBase_Activity.class);
+        startActivity(intent2);
     }
 
 }
