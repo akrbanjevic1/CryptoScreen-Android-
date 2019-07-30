@@ -1,6 +1,6 @@
 package com.aknu.cryptoscreen;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class FireBase_Activity extends AppCompatActivity {
@@ -9,5 +9,8 @@ public class FireBase_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fire_base_);
+
+        //In this activity, I want to integrate Firebase so that the user can log-in and then
+        //store and view the data on the cryptocurrencies that they hold.
     }
 }

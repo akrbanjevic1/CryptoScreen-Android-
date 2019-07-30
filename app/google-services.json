@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "407661554219",
+    "firebase_url": "https://cryptoz-76119.firebaseio.com",
+    "project_id": "cryptoz-76119",
+    "storage_bucket": "cryptoz-76119.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407661554219:android:37faf66ead048ef3",
+        "android_client_info": {
+          "package_name": "com.aknu.cryptoscreen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "407661554219-hugvovg8167pghneg8k8af4q4l9i79pv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwM9-kCdyh_NDyTXiNKz0-K0ehLZFXDFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "407661554219-hugvovg8167pghneg8k8af4q4l9i79pv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
