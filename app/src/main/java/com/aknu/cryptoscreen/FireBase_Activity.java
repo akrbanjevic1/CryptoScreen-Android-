@@ -11,34 +11,25 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.firebase.ui.auth.AuthUI;
-
-import java.util.Arrays;
-import java.util.List;
-
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.ActionCodeSettings;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.firebase.ui.auth.IdpResponse;
 import com.google.firebase.database.FirebaseDatabase;
 
 
 public class FireBase_Activity extends AppCompatActivity {
-
+    //Instantiating variables necessary
     private EditText mEmailField;
     private EditText mPasswordField;
-
     private Button mLoginBtn;
-
+    //Here we instantiate the necessary Authorization variables from Firebase. We have an Auth varia
+    //ble, and a listener for the auth
     private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,10 +40,8 @@ public class FireBase_Activity extends AppCompatActivity {
         if(!FirebaseApp.getApps(this).isEmpty()) {
             FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         }
-        GoogleSignInClient mGoogleSignInClient;
-        //In this activity, I want to integrate Firebase so that the user can log-in and then
-        //store and view the data on the cryptocurrencies that they hold.
 
+        //Here, we are creating the email and password fields
         mEmailField = (EditText) findViewById(R.id.emailField);
         mPasswordField = (EditText) findViewById(R.id.passwordField);
 
@@ -63,12 +52,31 @@ public class FireBase_Activity extends AppCompatActivity {
                 startSignIn();
             }
         });
+
+        //
+        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if (firebaseAuth.getCurrentUser() != null) {
+                    startActivity(new Intent(FireBase_Activity.this, AccountActivity.class));
+                }
+            }
+        };
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        mAuth.addAuthStateListener(mAuthStateListener);
     }
 
     private void startSignIn() {
         String email = mEmailField.getText().toString();
         String password = mPasswordField.getText().toString();
 
+        //An error toast will pop up letting the user know that the login isn't successful. We
+        //have 2 types of error toasts.
         if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
             Toast.makeText(FireBase_Activity.this, "Sign In Problem", Toast.LENGTH_LONG).show();
         }
