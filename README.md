@@ -20,3 +20,6 @@ All in all, this app has been a fun learning experience. In the future, I will b
 the parse methods for the textviews into one, but for now, I wanted to force myself
 to get practice by writing the methods multiple times. In addition, I also aim to 
 allow the user to change their fiat currency (so it's not just USD). 
+
+7/28/2019:
+I am now working on adding Firebase to the app. I have already created the activity for the log-in screen, and I have written the code to start that activity. In addion, I am currently in the process of adding the necessary dependencies. 
