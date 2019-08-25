@@ -25,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:background="#165E57"
         android:text="Check Real-Time Information About The Top 3 CryptoCurrencies"
         android:textColor="@color/colorPrimary"
         android:textSize="23sp"
@@ -38,6 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:background="#165E57"
         android:text="Tap here to log-in and view your Crypto Profile"
         android:textColor="@color/colorPrimary"
         android:textSize="23sp"
@@ -56,4 +58,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
