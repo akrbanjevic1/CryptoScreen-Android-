@@ -23,3 +23,6 @@ allow the user to change their fiat currency (so it's not just USD).
 
 7/28/2019:
 I am now working on adding Firebase to the app. I have already created the activity for the log-in screen, and I have written the code to start that activity. In addion, I am currently in the process of adding the necessary dependencies. 
+
+8/25/2019:
+So far, Firebase has been implemented and it seems to be working. I have successfully managed to create a log-in activity that takes in e-mail and password as parameters, and it incorporate error-checking methods to see if the user has successfully managed to enter the correct user and pass. From here, I would like to implement a Firebase database that contains user account-specific data and can be retrieved via the login info.
